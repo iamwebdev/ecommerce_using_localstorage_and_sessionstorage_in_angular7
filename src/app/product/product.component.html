@@ -1,0 +1,72 @@
+<h3 class="my-margin my-text" style="text-align:center">Add Product</h3>
+<div class="d-flex justify-content-center my-margin">
+<form method="POST" [formGroup]="product" (ngSubmit)="saveProduct(product.value)" style="border-color: white;border-style: solid;padding: 40px;background-color:  #870202">
+    <div class="form-group">
+      <label for="name" class="my-text">Product Name</label>
+      <input type="text" formControlName="name" class="form-control" id="name" placeholder="Enter product name" name="name" required>
+        <div class="mb-2" *ngIf="product.controls['name'].touched">
+          <span style="color: white;" *ngIf="product.controls['name'].hasError('required')">
+            Product name filled cannot be empty
+          </span>
+        </div>
+    </div>
+
+    <div class="form-group">
+      <label for="price" class="my-text">Price</label>
+      <input type="number" formControlName="price" class="form-control" id="price" name="price" placeholder="Enter product price" required>
+      <div class="mb-2" *ngIf="product.controls['price'].touched">
+        <span style="color: white;" *ngIf="product.controls['price'].hasError('required')">
+          Product price cannot be empty
+        </span>
+      </div>
+    </div>
+    
+    <div class="d-flex justify-content-center">
+      <button [disabled]="!product.valid" type="submit" class="btn btn-warning">Add Product</button>
+    </div>
+</form>
+</div>
+
+<div class="container">
+  <h3 class="my-text my-margin">Products List</h3>            
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th>Sr.no</th>
+        <th>Product Name</th>
+        <th>Product Price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let productDetail of productDetails; let i=index">
+        <td>{{ i+1 }}</td>
+        <td>{{ productDetail.name }}</td>
+        <td>{{ productDetail.price }}</td>
+        <td><a routerLink="/edit-product/{{ productDetail.id }}" class="btn btn-warning">Edit</a>&nbsp;<button (click)="confirmBox(productDetail.id)"  class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+  <div *ngIf="confirmProductDetails.length > 0" class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog col-md-4" role="document">
+      <div class="modal-content ">
+        <div class="modal-header my-modal">
+          <img src="{{ confirmProductDetails[0].imagePath?confirmProductDetails[0].imagePath:'#'}}" alt="img1" height="100" width="100" style="border-radius:50%;" class="ml-5">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body ">
+         Are you sure ?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-warning" data-dismiss="modal" >Cancel</button>
+          <button (click)="deleteProduct(confirmProductDetails[0].id)" type="button" data-dismiss="modal" class="btn btn-danger">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 

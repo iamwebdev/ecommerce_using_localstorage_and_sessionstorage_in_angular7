@@ -1,0 +1,30 @@
+<h3 class="my-margin my-text" style="text-align:center">Edit Product</h3>
+<div class="d-flex justify-content-center my-margin">
+<form method="POST" [formGroup]="product" (ngSubmit)="updateProduct(product.value)" style="border-color: white;border-style: solid;padding: 40px;background-color:  #870202">
+    <div class="form-group">
+      <label for="name" class="my-text">Product Name</label>
+      <input type="text" formControlName="name" class="form-control" id="name" value="{{ editProduct[0].name }}" placeholder="Enter product name" name="name" required>
+        <div class="mb-2" *ngIf="product.controls['name'].touched">
+          <span style="color: white;" *ngIf="product.controls['name'].hasError('required')">
+            Product name filled cannot be empty
+          </span>
+        </div>
+    </div>
+
+    <div class="form-group">
+      <label for="price" class="my-text">Price</label>
+      <input value="{{ editProduct[0].price }}" type="number" formControlName="price" class="form-control" id="price" name="price" placeholder="Enter product price" required>
+      <div class="mb-2" *ngIf="product.controls['price'].touched">
+        <span style="color: white;" *ngIf="product.controls['price'].hasError('required')">
+          Product price cannot be empty
+        </span>
+      </div>
+    </div>
+    
+    <div class="d-flex justify-content-center">
+      <a routerLink="/product-create" class="btn btn-warning">Cancel</a>&nbsp; 
+      <button type="submit" class="btn btn-danger">Update Product</button>
+    </div>
+</form>
+</div>
+

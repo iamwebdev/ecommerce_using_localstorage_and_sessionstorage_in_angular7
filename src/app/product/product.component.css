@@ -1,0 +1,14 @@
+.my-margin{
+    margin-top: 40px;
+}
+.my-text{
+    color:white
+}
+.my-modal{
+    background-color: #870202!important;
+}
+@media (min-width: 576px){
+.modal-dialog {
+    max-width: 260px;
+    }
+}

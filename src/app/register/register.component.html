@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="../../assets/css/normalize.css">
+<link rel="stylesheet" href="../../assets/css/demo.css">
+<link rel="stylesheet" href="../../assets/css/set1.css">
+<script src="../../assets/js/classie.js"></script>
+<div class="container register col-md-12" > 
+	<h1 class="my-margin my-text" style="text-align:center">Register Yourself</h1>
+	<form action="POST" [formGroup]="user" (ngSubmit)="registerUser(user.value)">
+		<section class="content">
+			<span class="input input--hoshi">
+				<input class="input__field input__field--hoshi animated_input" type="text" id="input-4" name="user_name" id="user_name" formControlName="user_name"  />
+				<label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-4">
+					<span class="input__label-content input__label-content--hoshi">Name</span>
+				</label>
+				<div class="mb-1" *ngIf="user.controls['user_name'].touched">
+					<span style="color: white;" *ngIf="user.controls['user_name'].hasError('required')">
+					</span>
+				</div>
+			</span>
+			<span class="input input--hoshi">
+				<input class="input__field input__field--hoshi animated_input" type="text" id="input-5" name="email" id="email" formControlName="email" />
+				<label class="input__label input__label--hoshi input__label--hoshi-color-2" for="input-5">
+					<span class="input__label-content input__label-content--hoshi">Email</span>
+				</label>
+				<div class="mb-1" *ngIf="user.controls['email'].touched">
+					<span style="color: white;" *ngIf="user.controls['email'].hasError('required')">
+					</span>
+				</div>
+			</span>
+			<span class="input input--hoshi">
+				<input class="input__field input__field--hoshi animated_input" type="text" id="input-6" name="password" id="password" formControlName="password" />
+				<label class="input__label input__label--hoshi input__label--hoshi-color-3" for="input-6">
+					<span class="input__label-content input__label-content--hoshi">Password</span>
+				</label>
+				<div class="mb-1" *ngIf="user.controls['password'].touched">
+					<span style="color: white;" *ngIf="user.controls['password'].hasError('required')">
+					</span>
+				</div>
+			</span>
+		</section>
+		
+		<div class="button-wrapper">
+		<button  class="button1" type="submit" name="button1" value="Register" [disabled]="!user.valid"> Register</button>
+		</div>
+	</form>
+</div>

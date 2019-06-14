@@ -1,0 +1,60 @@
+.my-logo > span {
+  text-transform: uppercase;
+  animation: glow 3s ease-in-out infinite;
+  font-weight: bold;
+  font-family: cursive
+}
+
+@keyframes glow {
+  0%, 100% {
+    color: #FFF;
+    text-shadow: 0 0 10px #0652DD, 0 0 50px #0652DD, 0 0 100px #0652DD;
+  }
+  
+  10%, 90% {
+    color: #111;
+    text-shadow: none;
+  }
+}
+
+.my-logo > span:nth-child(2) {
+	animation-delay: 0.25s;
+}
+
+.my-logo > span:nth-child(3) {
+	animation-delay: 0.5s;
+}
+
+.my-logo > span:nth-child(4) {
+	animation-delay: 0.75s;
+}
+
+.my-logo > span:nth-child(5) {
+	animation-delay: 1s;
+}
+
+.my-logo > span:nth-child(6) {
+	animation-delay: 1.25s;
+}
+
+.my-logo > span:nth-child(7) {
+	animation-delay: 1.5s;
+}
+.my-logo > span:nth-child(8) {
+	animation-delay: 1.7s;
+}
+.my-logo > span:nth-child(9) {
+	animation-delay: 2s;
+}
+.my-logo > span:nth-child(10) {
+	animation-delay: 2.25s;
+}
+.my-logo > span:nth-child(11) {
+	animation-delay: 2.5s;
+}
+.my-logo > span:nth-child(12) {
+	animation-delay: 2.7s;
+}
+.my-logo > span:nth-child(13) {
+	animation-delay: 3s;
+}

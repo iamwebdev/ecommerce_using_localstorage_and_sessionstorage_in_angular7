@@ -1,0 +1,15 @@
+<h1 class="my-class" style="text-align: center;margin-top:40px;">Search Results of "{{ query }}"</h1>
+<hr>
+<!-- <div class="col-md-12"> -->
+  <div class="row" *ngIf="results.length > 0;else nothingFound">
+      <div class="col-md-3 product" *ngFor ="let result of results"> 
+          <img src="{{ result.imagePath }}" class="blink"  style="border-radius: 20%" height="225" width="225">
+          <h4 class="my-class" style="text-align:center;">{{ result.name }}</h4>
+          <div class="d-flex justify-content-center">
+              <button (click)="grabItem(result.id)" class="btn btn-danger" type="submit">Grab It</button>
+          </div>
+      </div>
+  </div>
+  <ng-template #nothingFound>
+    <p>Data not found</p>
+  </ng-template>

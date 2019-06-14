@@ -1,0 +1,43 @@
+.signin {
+    /* background-color: aquamarine !important; */
+    background-image:url("../../assets/images/signin.png");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    /* opacity: 0.5; */
+    /* width:50px; */
+    /* height:100px; */
+  }
+  .my-margin{
+    margin-top: 40px;
+  }
+  .my-text{
+    color:white;
+    font-family: cursive;
+  } 
+  /** Button 1 **/
+.button1 {
+    border: 0;
+    outline: 0;
+    background-color: #CC3333;
+    color: #fff;
+    height: 50px;
+    width: 150px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 15px 0 #663333, 0 10px 30px #808080;
+      transition: 200ms;
+    font-family: 'Amatic SC', cursive;
+    font-size: 24px;
+    margin: 0 15px;
+  }
+  .button1:active {
+    transform: translateY(10px);
+    -webkit-transform: translateY(10px);
+    -moz-transform: translateY(10px);
+    box-shadow: 0 5px 0 #663333, 0 5px 5px #000;
+  }
+  /** End Button 1 **/
